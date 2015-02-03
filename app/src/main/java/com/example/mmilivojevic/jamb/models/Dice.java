@@ -24,7 +24,12 @@ public class Dice {
         return currentValue;
     }
 
-    public void setCurrentValue(int currentValue) {
+    public Dice() {
+        this.currentValue = Utils.randomNumber();
+        this.hold = false;
+    }
+
+    private void setCurrentValue(int currentValue) {
         this.currentValue = currentValue;
     }
 
@@ -47,7 +52,7 @@ public class Dice {
     /**
      * Unhold dice and allow dice throwing
      */
-    public  void relise() {
+    public  void realise() {
         this.setHold(false);
     }
 
