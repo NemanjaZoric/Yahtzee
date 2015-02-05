@@ -6,7 +6,7 @@ package com.example.mmilivojevic.jamb.models;
 public class DiceSet {
    
     private static final int NUMBER_OF_DICE = 6;
-    private Dice[] diceSet;
+    private Dice[] diceSet = new Dice[NUMBER_OF_DICE];
 
     public DiceSet() {
         for (int i = 0; i < NUMBER_OF_DICE; i++) {
@@ -17,7 +17,7 @@ public class DiceSet {
     /**
      * Throw all dice
      */
-    public void throwTheDice() {
+    public void rollDice() {
         for (int i = 0; i < NUMBER_OF_DICE; i++) {
             diceSet[i].play();
         }
@@ -49,5 +49,14 @@ public class DiceSet {
      */
     public  void realiseDice(int index) {
         diceSet[index].realise();
+    }
+
+    @Override
+    public String toString() {
+        String str = new String();
+        for (Dice d: diceSet) {
+            str += d.toString() + " | ";
+        }
+        return  str;
     }
 }

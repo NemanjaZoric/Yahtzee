@@ -70,4 +70,9 @@ public class Dice {
         }
         return false;
     }
+
+    @Override
+    public String toString() {
+        return "Dice:" + this.getCurrentValue();
+    }
 }
