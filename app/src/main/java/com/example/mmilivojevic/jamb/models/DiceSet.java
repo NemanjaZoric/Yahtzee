@@ -4,11 +4,17 @@ package com.example.mmilivojevic.jamb.models;
  * Created by mmilivojevic on 2/3/15.
  */
 public class DiceSet {
-   
+
+    private static DiceSet ourInstance = new DiceSet();
+
+    public static DiceSet getInstance() {
+        return ourInstance;
+    }
+
     private static final int NUMBER_OF_DICE = 6;
     private Dice[] diceSet = new Dice[NUMBER_OF_DICE];
 
-    public DiceSet() {
+    DiceSet() {
         for (int i = 0; i < NUMBER_OF_DICE; i++) {
             diceSet[i] = new Dice();
         }
