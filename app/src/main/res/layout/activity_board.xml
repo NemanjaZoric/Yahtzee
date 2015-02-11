@@ -1,0 +1,799 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        tools:context="com.example.mmilivojevic.jamb.BoardActivity"
+        android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_weight="1" >
+        
+        <GridView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/gridViewDice"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="6"
+            android:stretchMode="columnWidth"
+            android:numColumns="6"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Roll"
+            android:id="@+id/button"
+            android:layout_gravity="right"
+            android:onClick="rollBtn"
+            android:layout_weight="1" />
+    </LinearLayout>
+        
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_weight="1">
+
+            <!--Title-textViews-->
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text=""
+                    android:id="@+id/textViewTitle"
+                    android:layout_gravity="center"
+                    android:layout_weight="1" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="down"
+                    android:id="@id/textViewTitle"
+                    android:layout_gravity="center"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="up"
+                    android:id="@id/textViewTitle"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_column="3" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="down/up"
+                    android:id="@id/textViewTitle"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_column="4" />
+
+            </TableRow>
+            <!--END-Title-textViews-->
+
+            <!--Ones-row-->
+            <TableRow
+                android:tag="@string/ones"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/ones"
+                    android:id="@+id/textViewCategory"
+                    android:layout_gravity="center"
+                    android:layout_weight="1" />
+
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:id="@+id/btnOnesDown"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:onClick="onesDown" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:id="@+id/btnOnesUp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_column="3" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:id="@+id/btnOnesDownUp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_column="4" />
+
+            </TableRow>
+            <!--END-Ones-row-->
+
+            <!--Twos-row-->
+            <TableRow
+                android:tag="@string/twos"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/twos"
+                    android:id="@id/textViewCategory"
+                    android:layout_gravity="center"
+                    android:layout_weight="1" />
+
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:id="@+id/btnTwosDown"
+                    android:layout_gravity="center"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:id="@+id/btnTwosUp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_column="3" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:id="@+id/btnTwosDownUp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_column="4" />
+
+            </TableRow>
+            <!--END-Twos-row-->
+
+            <!--Threes-row-->
+            <TableRow
+                android:tag="@string/threes"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/threes"
+                    android:id="@id/textViewCategory"
+                    android:layout_gravity="center"
+                    android:layout_weight="1" />
+
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:id="@+id/btnThreesDown"
+                    android:layout_gravity="center"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:id="@+id/btnThreesUp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_column="3" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:id="@+id/btnThreesDownUp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_column="4" />
+
+            </TableRow>
+            <!--END-Threes-row-->
+
+            <!--Fours-row-->
+            <TableRow
+                android:tag="@string/fours"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/fours"
+                    android:id="@id/textViewCategory"
+                    android:layout_gravity="center"
+                    android:layout_weight="1" />
+
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:id="@+id/btnFoursDown"
+                    android:layout_gravity="center"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:id="@+id/btnFoursUp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_column="3" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:id="@+id/btnFoursDownUp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_column="4" />
+
+            </TableRow>
+            <!--END-Fours-row-->
+
+            <!--Fives-row-->
+            <TableRow
+                android:tag="@string/fives"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/fives"
+                    android:id="@id/textViewCategory"
+                    android:layout_gravity="center"
+                    android:layout_weight="1" />
+
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:id="@+id/btnFivesDown"
+                    android:layout_gravity="center"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:id="@+id/btnFivesUp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_column="3" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:id="@+id/btnFivesDownUp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_column="4" />
+
+            </TableRow>
+            <!--END-Fives-row-->
+
+            <!--Sixes-row-->
+            <TableRow
+                android:tag="@string/sixes"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/sixes"
+                    android:id="@id/textViewCategory"
+                    android:layout_gravity="center"
+                    android:layout_weight="1" />
+
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:id="@+id/btnSixesDown"
+                    android:layout_gravity="center"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:id="@+id/btnSixesUp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_column="3" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:id="@+id/btnSixesDownUp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_column="4" />
+
+            </TableRow>
+            <!--END-Sixes-row-->
+
+            <!--Sum1-textViews-->
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/sumCategory"
+                    android:id="@id/textViewCategory"
+                    android:layout_gravity="center"
+                    android:layout_weight="1" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/zeroSum"
+                    android:id="@+id/textViewDownSum1"
+                    android:layout_gravity="center"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/zeroSum"
+                    android:id="@+id/textViewUpSum1"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_column="3" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/zeroSum"
+                    android:id="@+id/textViewDownUpSum1"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_column="4" />
+
+            </TableRow>
+            <!--END-Sum1-textViews-->
+            <!--##################-->
+
+            <!--Max-row-->
+            <TableRow
+                android:tag="@string/max"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/max"
+                    android:id="@id/textViewCategory"
+                    android:layout_gravity="center"
+                    android:layout_weight="1" />
+
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:id="@+id/btnMaxDown"
+                    android:layout_gravity="center"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:id="@+id/btnMaxUp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_column="3" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:id="@+id/btnMaxDownUp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_column="4" />
+
+            </TableRow>
+            <!--END-Max-row-->
+
+            <!--Min-row-->
+            <TableRow
+                android:tag="@string/min"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/min"
+                    android:id="@id/textViewCategory"
+                    android:layout_gravity="center"
+                    android:layout_weight="1" />
+
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:id="@+id/btnMinDown"
+                    android:layout_gravity="center"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:id="@+id/btnMinUp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_column="3" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:id="@+id/btnMinDownUp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_column="4" />
+
+            </TableRow>
+            <!--END-Min-row-->
+
+            <!--Sum2-textViews-->
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/sumCategory"
+                    android:id="@id/textViewCategory"
+                    android:layout_gravity="center"
+                    android:layout_weight="1" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/zeroSum"
+                    android:id="@+id/textViewDownSum2"
+                    android:layout_gravity="center"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/zeroSum"
+                    android:id="@+id/textViewUpSum2"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_column="3" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/zeroSum"
+                    android:id="@+id/textViewDownUpSum2"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_column="4" />
+
+            </TableRow>
+            <!--END-Sum2-textViews-->
+            <!--##################-->
+
+
+            <!--Straight-row-->
+            <TableRow
+                android:tag="@string/straight"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/straight"
+                    android:id="@id/textViewCategory"
+                    android:layout_gravity="center"
+                    android:layout_weight="1" />
+
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:id="@+id/btnStraightDown"
+                    android:layout_gravity="center"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:id="@+id/btnStraightUp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_column="3" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:id="@+id/btnStraightDownUp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_column="4" />
+
+            </TableRow>
+            <!--END-Straight-row-->
+
+            <!--Full-row-->
+            <TableRow
+                android:tag="@string/full"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/full"
+                    android:id="@id/textViewCategory"
+                    android:layout_gravity="center"
+                    android:layout_weight="1" />
+
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:id="@+id/btnFullDown"
+                    android:layout_gravity="center"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:id="@+id/btnFullUp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_column="3" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:id="@+id/btnFullDownUp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_column="4" />
+
+            </TableRow>
+            <!--END-Full-row-->
+
+            <!--Poker-row-->
+            <TableRow
+                android:tag="@string/poker"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/poker"
+                    android:id="@id/textViewCategory"
+                    android:layout_gravity="center"
+                    android:layout_weight="1" />
+
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:id="@+id/btnPokerDown"
+                    android:layout_gravity="center"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:id="@+id/btnPokerUp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_column="3" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:id="@+id/btnPokerDownUp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_column="4" />
+
+            </TableRow>
+            <!--END-Poker-row-->
+
+            <!--Yahtzee-row-->
+            <TableRow
+                android:tag="@string/yahtzee"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/yahtzee"
+                    android:id="@id/textViewCategory"
+                    android:layout_gravity="center"
+                    android:layout_weight="1" />
+
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:id="@+id/btnYahtzeeDown"
+                    android:layout_gravity="center"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:id="@+id/btnYahtzeeUp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_column="3" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:id="@+id/btnYahtzeeDownUp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_column="4" />
+
+            </TableRow>
+            <!--END-Yahtzee-row-->
+
+            <!--Sum3-textViews-->
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/sumCategory"
+                    android:id="@id/textViewCategory"
+                    android:layout_gravity="center"
+                    android:layout_weight="1" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/zeroSum"
+                    android:id="@+id/textViewDownSum3"
+                    android:layout_gravity="center"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/zeroSum"
+                    android:id="@+id/textViewUpSum3"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_column="3" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/zeroSum"
+                    android:id="@+id/textViewDownUpSum3"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_column="4" />
+
+            </TableRow>
+            <!--END-Sum3-textViews-->
+            <!--##################-->
+            
+            <!--FinalSum-textViews-->
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/sumCategory"
+                    android:id="@id/textViewCategory"
+                    android:layout_gravity="center"
+                    android:layout_weight="4" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/zeroSum"
+                    android:id="@+id/textViewDownUpSumFinal"
+                    android:layout_weight="1"
+                    android:layout_gravity="right" />
+
+            </TableRow>
+
+            <!--END-FinalSum-textViews-->
+            <!--##################-->
+
+        </TableLayout>
+
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/dice"
+            android:layout_weight="10">
+
+        </FrameLayout>
+    </LinearLayout>
+</ScrollView>

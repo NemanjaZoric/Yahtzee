@@ -1,13 +1,28 @@
 package com.example.mmilivojevic.jamb.models.player;
 
+import java.io.Serializable;
+
 /**
  * Created by mmilivojevic on 2/6/15.
  */
-public class Player {
+public class Player implements Serializable{
     
     private Integer id;
     private String name;
-    private Turn[] turns;
+    private Turn[] turns; // TODO: turns history
+    private Board board;
+
+    public Player(String name) {
+        this.name = name;
+    }
+
+    public Board getBoard() {
+        return board;
+    }
+
+    public void setBoard(Board board) {
+        this.board = board;
+    }
 
     public Integer getId() {
         return id;

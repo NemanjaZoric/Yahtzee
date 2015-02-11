@@ -53,8 +53,12 @@ public class DiceSet {
      * Realise  dice at index
      * @param index
      */
-    public  void realiseDice(int index) {
+    public void realiseDice(int index) {
         diceSet[index].realise();
+    }
+    
+    public boolean isHoldDice(int index) {
+        return diceSet[index].isHold();
     }
 
     @Override

@@ -2,15 +2,18 @@ package com.example.mmilivojevic.jamb;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
-import com.example.mmilivojevic.jamb.models.DiceSet;
 import com.example.mmilivojevic.jamb.models.Game;
 import com.example.mmilivojevic.jamb.models.player.Player;
-import com.example.mmilivojevic.jamb.utils.Calculation;
 
 import java.util.ArrayList;
 
@@ -18,11 +21,18 @@ import java.util.ArrayList;
 public class MainActivity extends Activity {
 
     public static final String TAG = "JambTAG";
+    public static final String FIRST_ACTIVITY_GAME = "com.example.mmilivojevic.jamb.players";
+    
+//    private List<Player> players = new ArrayList<>();
+    
+    private Game game = new Game();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 //
 //        DiceSet diceSet = new DiceSet();
 //        Log.v(TAG, diceSet.toString());
@@ -79,5 +89,40 @@ public class MainActivity extends Activity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+    
+    public void playTheGame(View view) {
+        Intent boardIntent = new Intent(this, BoardActivity.class);
+        // TODO: place players in extras
+         boardIntent.putExtra(FIRST_ACTIVITY_GAME, this.game);
+        if (game.getPlayers().size() != 0) {
+            startActivity(boardIntent);
+        } else {
+            Toast.makeText(this, "Add some players", Toast.LENGTH_LONG).show();
+        }
+    }
+    
+    public void addNewPlayer(View view) {
+        EditText playerName = (EditText) findViewById(R.id.etNewPlayerName);
+        playerName.clearComposingText();
+        if (!playerName.getText().toString().equals("")) {
+            this.game.addPlayer(new Player(playerName.getText().toString()));
+        }
+        
+        playerName.setText("");
+        this.printPlayers();
+    }
+
+    private void printPlayers() {
+        LinearLayout linearLayout = (LinearLayout) findViewById(R.id.linearLayoutPlayers);
+        linearLayout.removeAllViewsInLayout();
+        for (Player player : this.game.getPlayers()) {
+            TextView tempPlayerView = new TextView(this);
+            tempPlayerView.setText(player.getName());
+            tempPlayerView.setTextSize(20);
+            tempPlayerView.setPadding(0,10,0,10);
+            
+            linearLayout.addView(tempPlayerView);
+        }
     }
 }
