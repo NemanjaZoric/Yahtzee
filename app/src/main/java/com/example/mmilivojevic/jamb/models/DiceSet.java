@@ -1,9 +1,11 @@
 package com.example.mmilivojevic.jamb.models;
 
+import java.io.Serializable;
+
 /**
  * Created by mmilivojevic on 2/3/15.
  */
-public class DiceSet {
+public class DiceSet implements Serializable {
 
     private static DiceSet ourInstance = new DiceSet();
 
@@ -68,5 +70,11 @@ public class DiceSet {
             str += d.toString() + " | ";
         }
         return  str;
+    }
+    
+    public void realiseAll() {
+        for (Dice d : diceSet) {
+            d.realise();
+        }
     }
 }

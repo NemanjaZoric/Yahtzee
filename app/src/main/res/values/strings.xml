@@ -30,4 +30,6 @@
     <string name="playerName">Player</string>
     <string name="plusSign">+</string>
 
+    <string name="nextPlayerBtn">Next Player</string>
+
 </resources>

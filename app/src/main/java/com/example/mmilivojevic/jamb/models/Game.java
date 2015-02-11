@@ -2,7 +2,6 @@ package com.example.mmilivojevic.jamb.models;
 
 import android.content.Context;
 
-import com.example.mmilivojevic.jamb.Preferences;
 import com.example.mmilivojevic.jamb.models.player.Player;
 
 import java.io.Serializable;
@@ -16,7 +15,7 @@ public class Game implements Serializable {
     private Context applicationContext;
     private static DiceSet diceSet;
     private ArrayList <Player> players;
-    private int currentPlayer;
+    private int currentPlayerIndex;
 
 //    public static Game getInstance() {
 //        return ourInstance;
@@ -26,7 +25,7 @@ public class Game implements Serializable {
         diceSet = new DiceSet();
         players = new ArrayList<Player>();
         this.setPlayersFromDb();
-        currentPlayer =0;
+        currentPlayerIndex =0;
     }
 
     public Game(Context applicationContext, ArrayList<Player> players) {
@@ -65,11 +64,51 @@ public class Game implements Serializable {
         return this.players.get(index);
     }
 
-    public int getCurrentPlayer() {
-        return currentPlayer;
+    public int getCurrentPlayerIndex() {
+        return currentPlayerIndex;
     }
 
-    public void setCurrentPlayer(int currentPlayer) {
-        this.currentPlayer = currentPlayer;
+    public Player getCurrentPlayer() {
+        return this.players.get(currentPlayerIndex);
+        
+    }
+    
+    public void setCurrentPlayerIndex(int currentPlayer) {
+        this.currentPlayerIndex = currentPlayer;
+    }
+
+    public void nextPlayer() {
+        currentPlayerIndex = (currentPlayerIndex + 1) % players.size();
+    }
+    
+    public boolean isTheEndOfGame() {
+        for (Player player : this.players) {
+            if (!player.getBoard().isTheBoardFull()) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * Winner of the game
+     *
+     * @return winner if applicable, otherwise return null
+     */
+    public Player getWinner() {
+        if (this.players.size() < 1) {
+            return null;
+        }
+        
+        Player winner = this.players.get(0);
+        if (this.isTheEndOfGame()) {
+            for (int i = 0; i < this.players.size(); i++) {
+                if (this.players.get(i).getBoard().sumFinal() > winner.getBoard().sumFinal()) {
+                    winner = this.players.get(i);
+                }
+            }
+            return winner;
+        }
+        return null;
     }
 }

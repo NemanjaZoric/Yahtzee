@@ -2,7 +2,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:id="@+id/gameScrollView ">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -121,7 +122,8 @@
                     android:id="@+id/btnOnesUp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:layout_column="3" />
+                    android:layout_column="3"
+                    android:onClick="onesUp" />
 
                 <Button
                     android:layout_width="wrap_content"
@@ -130,7 +132,8 @@
                     android:id="@+id/btnOnesDownUp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:layout_column="4" />
+                    android:layout_column="4"
+                    android:onClick="onesDownUp" />
 
             </TableRow>
             <!--END-Ones-row-->
@@ -156,7 +159,8 @@
                     android:text=""
                     android:id="@+id/btnTwosDown"
                     android:layout_gravity="center"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:onClick="twosDown"/>
 
                 <Button
                     android:layout_width="wrap_content"
@@ -165,7 +169,8 @@
                     android:id="@+id/btnTwosUp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:layout_column="3" />
+                    android:layout_column="3"
+                    android:onClick="twosUp"/>
 
                 <Button
                     android:layout_width="wrap_content"
@@ -174,7 +179,8 @@
                     android:id="@+id/btnTwosDownUp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:layout_column="4" />
+                    android:layout_column="4"
+                    android:onClick="twosDownUp"/>
 
             </TableRow>
             <!--END-Twos-row-->
@@ -200,7 +206,8 @@
                     android:text=""
                     android:id="@+id/btnThreesDown"
                     android:layout_gravity="center"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:onClick="threesDown"/>
 
                 <Button
                     android:layout_width="wrap_content"
@@ -209,7 +216,8 @@
                     android:id="@+id/btnThreesUp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:layout_column="3" />
+                    android:layout_column="3"
+                    android:onClick="threesUp"/>
 
                 <Button
                     android:layout_width="wrap_content"
@@ -218,7 +226,8 @@
                     android:id="@+id/btnThreesDownUp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:layout_column="4" />
+                    android:layout_column="4"
+                    android:onClick="threesDownUp"/>
 
             </TableRow>
             <!--END-Threes-row-->
@@ -244,7 +253,8 @@
                     android:text=""
                     android:id="@+id/btnFoursDown"
                     android:layout_gravity="center"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:onClick="foursDown" />
 
                 <Button
                     android:layout_width="wrap_content"
@@ -253,7 +263,8 @@
                     android:id="@+id/btnFoursUp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:layout_column="3" />
+                    android:layout_column="3"
+                    android:onClick="foursUp" />
 
                 <Button
                     android:layout_width="wrap_content"
@@ -262,7 +273,8 @@
                     android:id="@+id/btnFoursDownUp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:layout_column="4" />
+                    android:layout_column="4"
+                    android:onClick="foursDownUp" />
 
             </TableRow>
             <!--END-Fours-row-->
@@ -279,7 +291,7 @@
                     android:text="@string/fives"
                     android:id="@id/textViewCategory"
                     android:layout_gravity="center"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"/>
 
 
                 <Button
@@ -288,7 +300,8 @@
                     android:text=""
                     android:id="@+id/btnFivesDown"
                     android:layout_gravity="center"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:onClick="fivesDown" />
 
                 <Button
                     android:layout_width="wrap_content"
@@ -297,7 +310,8 @@
                     android:id="@+id/btnFivesUp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:layout_column="3" />
+                    android:layout_column="3"
+                    android:onClick="fivesUp" />
 
                 <Button
                     android:layout_width="wrap_content"
@@ -306,7 +320,8 @@
                     android:id="@+id/btnFivesDownUp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:layout_column="4" />
+                    android:layout_column="4"
+                    android:onClick="fivesDownUp" />
 
             </TableRow>
             <!--END-Fives-row-->
@@ -332,7 +347,8 @@
                     android:text=""
                     android:id="@+id/btnSixesDown"
                     android:layout_gravity="center"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:onClick="sixesDown" />
 
                 <Button
                     android:layout_width="wrap_content"
@@ -341,7 +357,8 @@
                     android:id="@+id/btnSixesUp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:layout_column="3" />
+                    android:layout_column="3"
+                    android:onClick="sixesUp" />
 
                 <Button
                     android:layout_width="wrap_content"
@@ -350,7 +367,8 @@
                     android:id="@+id/btnSixesDownUp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:layout_column="4" />
+                    android:layout_column="4"
+                    android:onClick="sixesDownUp" />
 
             </TableRow>
             <!--END-Sixes-row-->
@@ -421,7 +439,8 @@
                     android:text=""
                     android:id="@+id/btnMaxDown"
                     android:layout_gravity="center"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:onClick="maxDown" />
 
                 <Button
                     android:layout_width="wrap_content"
@@ -430,7 +449,8 @@
                     android:id="@+id/btnMaxUp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:layout_column="3" />
+                    android:layout_column="3"
+                    android:onClick="maxUp" />
 
                 <Button
                     android:layout_width="wrap_content"
@@ -439,7 +459,8 @@
                     android:id="@+id/btnMaxDownUp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:layout_column="4" />
+                    android:layout_column="4"
+                    android:onClick="maxDownUp" />
 
             </TableRow>
             <!--END-Max-row-->
@@ -465,7 +486,8 @@
                     android:text=""
                     android:id="@+id/btnMinDown"
                     android:layout_gravity="center"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:onClick="minDown" />
 
                 <Button
                     android:layout_width="wrap_content"
@@ -474,7 +496,8 @@
                     android:id="@+id/btnMinUp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:layout_column="3" />
+                    android:layout_column="3"
+                    android:onClick="minUp" />
 
                 <Button
                     android:layout_width="wrap_content"
@@ -483,7 +506,8 @@
                     android:id="@+id/btnMinDownUp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:layout_column="4" />
+                    android:layout_column="4"
+                    android:onClick="minDownUp" />
 
             </TableRow>
             <!--END-Min-row-->
@@ -555,7 +579,8 @@
                     android:text=""
                     android:id="@+id/btnStraightDown"
                     android:layout_gravity="center"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:onClick="straightDown" />
 
                 <Button
                     android:layout_width="wrap_content"
@@ -564,7 +589,8 @@
                     android:id="@+id/btnStraightUp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:layout_column="3" />
+                    android:layout_column="3"
+                    android:onClick="straightUp"/>
 
                 <Button
                     android:layout_width="wrap_content"
@@ -573,7 +599,8 @@
                     android:id="@+id/btnStraightDownUp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:layout_column="4" />
+                    android:layout_column="4"
+                    android:onClick="straightDownUp"/>
 
             </TableRow>
             <!--END-Straight-row-->
@@ -599,7 +626,8 @@
                     android:text=""
                     android:id="@+id/btnFullDown"
                     android:layout_gravity="center"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:onClick="fullDown" />
 
                 <Button
                     android:layout_width="wrap_content"
@@ -608,7 +636,8 @@
                     android:id="@+id/btnFullUp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:layout_column="3" />
+                    android:layout_column="3"
+                    android:onClick="fullUp" />
 
                 <Button
                     android:layout_width="wrap_content"
@@ -617,7 +646,8 @@
                     android:id="@+id/btnFullDownUp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:layout_column="4" />
+                    android:layout_column="4" 
+                    android:onClick="fullDownUp" />
 
             </TableRow>
             <!--END-Full-row-->
@@ -643,7 +673,8 @@
                     android:text=""
                     android:id="@+id/btnPokerDown"
                     android:layout_gravity="center"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:onClick="pokerDown" />
 
                 <Button
                     android:layout_width="wrap_content"
@@ -652,7 +683,8 @@
                     android:id="@+id/btnPokerUp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:layout_column="3" />
+                    android:layout_column="3"
+                    android:onClick="pokerUp" />
 
                 <Button
                     android:layout_width="wrap_content"
@@ -661,7 +693,8 @@
                     android:id="@+id/btnPokerDownUp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:layout_column="4" />
+                    android:layout_column="4"
+                    android:onClick="pokerDownUp" />
 
             </TableRow>
             <!--END-Poker-row-->
@@ -687,7 +720,8 @@
                     android:text=""
                     android:id="@+id/btnYahtzeeDown"
                     android:layout_gravity="center"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:onClick="yahtzeeDown" />
 
                 <Button
                     android:layout_width="wrap_content"
@@ -696,7 +730,8 @@
                     android:id="@+id/btnYahtzeeUp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:layout_column="3" />
+                    android:layout_column="3"
+                    android:onClick="yahtzeeUp" />
 
                 <Button
                     android:layout_width="wrap_content"
@@ -705,7 +740,8 @@
                     android:id="@+id/btnYahtzeeDownUp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:layout_column="4" />
+                    android:layout_column="4"
+                    android:onClick="yahtzeeDownUp" />
 
             </TableRow>
             <!--END-Yahtzee-row-->
@@ -772,7 +808,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
                     android:text="@string/zeroSum"
                     android:id="@+id/textViewDownUpSumFinal"
                     android:layout_weight="1"
@@ -785,15 +821,13 @@
 
         </TableLayout>
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nextPlayerBtn"
+            android:id="@+id/btnNextPlayer"
+            android:layout_gravity="center_horizontal|top" 
+            android:onClick="nextPlayer"/>
 
-        <FrameLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:id="@+id/dice"
-            android:layout_weight="10">
-
-        </FrameLayout>
     </LinearLayout>
 </ScrollView>

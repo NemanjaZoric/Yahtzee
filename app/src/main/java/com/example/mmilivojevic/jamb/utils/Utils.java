@@ -1,5 +1,11 @@
 package com.example.mmilivojevic.jamb.utils;
 
+import android.content.Context;
+import android.media.MediaPlayer;
+
+import com.example.mmilivojevic.jamb.BoardActivity;
+import com.example.mmilivojevic.jamb.R;
+
 import java.util.Random;
 
 /**
@@ -15,5 +21,10 @@ public class Utils {
         Random rand = new Random();
         int randomNum = rand.nextInt(6) + 1;
         return randomNum;
+    }
+
+    public static void playDiceSound(Context context) {
+        final MediaPlayer mediaPlayer = MediaPlayer.create(context, R.raw.dice_sound);
+        mediaPlayer.start();
     }
 }

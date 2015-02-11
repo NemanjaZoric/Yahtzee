@@ -2,10 +2,12 @@ package com.example.mmilivojevic.jamb.models;
 
 import com.example.mmilivojevic.jamb.utils.Utils;
 
+import java.io.Serializable;
+
 /**
  * Created by mmilivojevic on 2/3/15.
  */
-public class Dice {
+public class Dice implements Serializable {
     private boolean hold;
     private int currentValue;
 
